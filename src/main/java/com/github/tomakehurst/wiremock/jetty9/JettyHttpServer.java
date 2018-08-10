@@ -268,6 +268,8 @@ public class JettyHttpServer implements HttpServer {
                 jettySettings.getRequestHeaderSize().or(8192)
         );
         httpConfig.setSendDateHeader(false);
+        // Remove the HTTP server header.
+        httpConfig.setSendServerVersion(false);
         return httpConfig;
     }
 
